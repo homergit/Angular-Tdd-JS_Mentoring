@@ -1,0 +1,118 @@
+/* DashboardComponent's private CSS styles */
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+a {
+  text-decoration: none;
+}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h3 {
+  text-align: center; margin-bottom: 0;
+}
+h4 {
+  position: relative;
+}
+.grid {
+  margin: 0;
+}
+.col-1-4 {
+  width: 25%;
+}
+.module {
+  padding: 20px;
+  text-align: center;
+  color: #575757;
+  max-height: 120px;
+  min-width: 120px;
+  background-color: white;
+  border-radius: 2px;
+  border: 1px solid #575757;
+}
+.module:hover {
+  background-color: #EEE;
+  cursor: pointer;
+  color: #607d8b;
+}
+
+.search,
+.add-button {
+  display: inline-block;
+  padding: 20px;
+}
+
+.completed .module{
+  background-color: rgba(58, 188, 65, 0.69);
+}
+
+.completed .module .edit,
+.completed .module .archive{
+  display: none;
+}
+
+.toggle,
+.edit,
+.archive {
+  color: #607d8b;
+  background: none;
+  font-size: 14px;
+  text-transform: lowercase;
+  padding: 5px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.module:hover .toggle {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.module:hover .edit {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.module:hover .archive {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.add-button {
+  display: inline-block;
+  padding: 20px;
+}
+
+.search {
+  display: block;
+  width: 100%;
+  float: left;
+  padding: 20px;
+}
+
+.grid-pad {
+  padding: 10px 0;
+}
+.grid-pad > [class*='col-']:last-of-type {
+  padding-right: 20px;
+}
+@media (max-width: 600px) {
+  .module {
+    font-size: 10px;
+    max-height: 75px; }
+}
+@media (max-width: 1024px) {
+  .grid {
+    margin: 0;
+  }
+  .module {
+    min-width: 60px;
+  }
+}

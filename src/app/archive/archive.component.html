@@ -1,0 +1,17 @@
+<h2>My Archive</h2>
+
+<ul class="notes">
+  <div *ngFor="let note of notes">
+    <li *ngIf="note.isArchived">
+      <a routerLink="/detail/{{note.id}}">
+        <span class="badge">{{note.id}}</span> {{note.text}}
+      </a>
+      <button class="delete" title="delete note"
+              (click)="delete(note)">x
+      </button>
+      <button class="archive" (click)="rearchiveItem(note)">
+        rearchive
+      </button>
+    </li>
+  </div>
+</ul>

@@ -1,0 +1,31 @@
+<div class="add-button">
+  <label>Add new note:
+    <input #noteText />
+  </label>
+  <button (click)="add(noteText.value); noteText.value=''">
+    add
+  </button>
+</div>
+
+<h3>My Notes</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let note of notes" class="col-1-4"
+       [class.completed]="note.complete">
+    <div class="module note">
+      <h4>{{note.text}}</h4>
+      <label class="toggle">
+        <input class="toggle-input" type="checkbox" (click)="toggleNoteComplete(note)" [checked]="note.complete">
+        done
+      </label>
+      <a class="edit" routerLink="/detail/{{note.id}}">
+        edit
+      </a>
+      <button class="archive" (click)="archiveItem(note)">
+        archive
+      </button>
+    </div>
+  </div>
+</div>
+<br>
+
+<app-note-search class="search"></app-note-search>
